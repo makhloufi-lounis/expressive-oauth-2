@@ -1,0 +1,28 @@
+<div>
+    Error : <?php echo $this->error?>
+</div>
+<h1>Login :</h1>
+<?php
+
+$form = $this->form;
+
+// Setting the value for 'action' attribute
+$form->setAttribute('action', $this->url('login', array('action' => 'add')));
+
+// Ensures state is ready for use
+$form->prepare();
+
+// Opening the form tag
+echo $this->form()->openTag($form);
+
+// Hidden Element to store id
+echo $this->formRow($form->get('username'));
+
+// TextBox element to input Name of student
+echo $this->formRow($form->get('password'));
+
+// Submit button
+echo $this->formSubmit($form->get('Login'));
+
+// Closing the form tag
+echo $this->form()->closeTag();
